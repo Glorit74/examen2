@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+
+  background: transparent;
+
+  font-family: 'Roboto';
+
+  text-decoration: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a img {
+  border: none;
+}
+
+button,
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+input,
+textarea,
+select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border-radius: 0;
+}
+
+$desktop: 900px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eae9e4;
+  color: #1c1717;
+  padding: 80px 10px 20px;
+
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background-color: #1c1717;
+  color: #eae9e4;
+
+  .title {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  span {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+}
+
+.card {
+  width: 350px;
+  position: relative;
+  margin: 50px 10px;
+  border: 2px solid #1c1717;
+  padding: 40px;
+  @include desktop {
+    align-self: stretch;
+  }
+
+  .up {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 120px;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    transform: translateX(-40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1717;
+
+    font-size: 24px;
+    color: #eae9e4;
+  }
+
+  .down {
+    position: absolute;
+    width: 100%;
+    bottom: -30px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    transform: translateX(-40px);
+  }
+}
